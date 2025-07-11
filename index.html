@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  
+  <header>
+    <h1>Employee Directory</h1>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search by name or email"/>
+    </div>
+    <button onclick="openFilterModal()">Filter</button>
+
+  </header>
+
+  <div class="controls">
+    <div>
+      Sort: 
+      <select id="sort" onchange="sortEmployees()">
+        <option value="">--Select--</option>
+        <option value="name">Name</option>
+        <option value="department">Department</option>
+      </select>
+      Show: 
+      <select id="limit" onchange="limitEmployees()">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+    <button class="add-btn">Add Employee</button>
+  </div>
+
+  <div class="employee-list" id="employeeList"></div>
+
+  <footer>
+    <p>© 2025 Employee Directory App. All rights reserved.</p>
+  </footer>
+
+  <!-- Add Employee Modal -->
+<div id="employeeModal" class="modal">
+  <div class="modal-content">
+    <h2>Add Employee</h2>
+    <form id="employeeForm">
+      <input type="text" id="firstName" placeholder="First name" required />
+      <input type="text" id="lastName" placeholder="Last name" required />
+      <div class="row">
+        <input type="email" id="email" placeholder="Email" required />
+        <select id="department" required>
+          <option value="">Select Department</option>
+          <option value="HR">HR</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+        </select>
+      </div>
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="Manager">Manager</option>
+        <option value="Developer">Developer</option>
+        <option value="Analyst">Analyst</option>
+      </select>
+      <div class="modal-buttons">
+        <button type="button" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="add">Add</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Edit Employee Modal -->
+<div id="editEmployeeModal" class="modal">
+  <div class="modal-content">
+    <h2>Edit Employee</h2>
+    <form id="editEmployeeForm">
+      <input type="text" id="editFirstName" placeholder="First name" required />
+      <input type="text" id="editLastName" placeholder="Last name" required />
+      <div class="row">
+        <input type="email" id="editEmail" placeholder="Email" required />
+        <select id="editDepartment" required>
+          <option value="">Select Department</option>
+          <option value="HR">HR</option>
+          <option value="IT">IT</option>
+          <option value="Finance">Finance</option>
+        </select>
+      </div>
+      <select id="editRole" required>
+        <option value="">Select Role</option>
+        <option value="Manager">Manager</option>
+        <option value="Developer">Developer</option>
+        <option value="Analyst">Analyst</option>
+      </select>
+      <div class="modal-buttons">
+        <button type="button" onclick="closeEditModal()">Cancel</button>
+        <button type="submit" class="add">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Filter Modal -->
+<div id="filterModal" class="modal">
+  <div class="modal-content">
+    <h2>Filter Employees</h2>
+    <label for="filterName">First Name:</label>
+    <input type="text" id="filterName" /><br />
+    <label for="filterDepartment">Department:</label>
+    <input type="text" id="filterDepartment" /><br />
+    <label for="filterRole">Role:</label>
+    <input type="text" id="filterRole" /><br />
+    <div class="modal-buttons">
+      <button onclick="applyFilters()">Apply</button>
+      <button onclick="resetFilters()">Reset</button>
+      <button onclick="closeFilterModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
