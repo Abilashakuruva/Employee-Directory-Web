@@ -9,17 +9,9 @@ Run the App
 
 Open index.html directly in your browser (no server needed).
 
-📁 Project Structure
-
-employee-directory-app/
-│
-├── index.html         # Main HTML file
-├── style.css          # All styling for responsiveness and modals
-├── script.js          # JavaScript logic (CRUD, search, filter, modal handling)
-└── README.md          # Project documentation
-
 </details>
 💡 Features
+
 ✅ Add/Edit/Delete employees via modals
 
 ✅ Real-time search by name or email
@@ -34,6 +26,7 @@ employee-directory-app/
 
 🧠 Reflection
 🏗️ Challenges Faced
+
 Building modals and filters without any external libraries.
 
 Managing UI states and interactions manually in vanilla JS.
