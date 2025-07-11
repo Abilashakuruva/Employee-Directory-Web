@@ -4,6 +4,7 @@ A responsive web application to manage an employee directory — add, edit, dele
 🔧 Setup Instructions
 Clone the Repository
 git clone https://github.com/Abilashakuruva/Employee-Directory-Web
+
 cd employee-directory-app
 Run the App
 
